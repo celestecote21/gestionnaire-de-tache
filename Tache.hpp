@@ -9,4 +9,5 @@ private:
 public:
     Tache(std::string name, std::string content);
     ~Tache();
+    std::string tacheToString(int id);
 };

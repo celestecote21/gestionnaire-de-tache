@@ -9,23 +9,32 @@ using namespace std;
 int main()
 {
     Category biblio1 = Category();
-    cout << "bienvenue dans le meilleur des gestionnaires des taches,\n voici les options qui sont possible" << endl;
-    cout << "\t 1. ajouter une tache" << endl;
-    cout << "\t 2. Voir les taches a faire" << endl;
-    cout << "\t 3. supprimer une tache" << endl;
+    bool cont(true);
+    do
+    {   
+        cout << "bienvenue dans le meilleur des gestionnaires des taches,\n voici les options qui sont possible" << endl;
+        cout << "\t 1. ajouter une tache" << endl;
+        cout << "\t 2. Voir les taches a faire" << endl;
+        cout << "\t 3. supprimer une tache" << endl;
+        cout << "\t 9. exit" << endl;
 
-    int choix;
-    cin >> choix;
+        int choix;
+        cin >> choix;
 
-    switch (choix)
-    {
-    case 1:
-        biblio1.addTache("coucou", "dire bonjour");
-        break;
-    
-    default:
-        break;
-    }
+        switch (choix)
+        {
+        case 1:
+        TODO: "faire la partie pour ajouter une tache";
+            biblio1.addTache("coucou", "dire bonjour");
+            break;
+        case 2:
+            cout << biblio1.getTache() << endl;
+            break;
+        case 9:
+            cont = false;
+        default:
+            break;
+        }
 
-    cout << choix;
+    } while (cont);
 }

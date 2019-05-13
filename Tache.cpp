@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 #include "Tache.hpp"
 
 using namespace std;
@@ -14,4 +15,16 @@ Tache::Tache(string name, string content)
 
 Tache::~Tache()
 {
+}
+
+string Tache::tacheToString(int id)
+{
+    string str = "";
+    ostringstream ost;
+    
+    ost << "\"id\": " << id;    
+    ost << "\"name\": " << m_name;
+    ost << " \"content\": " << m_content;
+    ost << ost.str();
+    return str;
 }
