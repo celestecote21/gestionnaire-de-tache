@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include "Tache.hpp"
 #include "Category.hpp"
@@ -102,5 +103,21 @@ void Category::delTask(int id)
         m_listTache[m_nbTache] = NULL;
         m_nbTache --;       
     }
+}
+
+int Category::save()
+{
+    ofstream fichier("./task");
+    if(fichier){
+        fichier << getTache();
+        TODO: "manque beacoup de truc il faut verifier que l'on sauvegarde pas deux fois ma meme chose et pas les meme id";
+
+
+        return 1;
+    }else{
+        cout << "sauvegarde impossible" << endl;
+        return -1;
+    }
+    
 }
 

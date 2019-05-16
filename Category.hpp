@@ -14,6 +14,7 @@ public:
     void addTache();
     void delTask(int id);
     int getNextId();
+    int save();
     std::string getTache();
 
 
