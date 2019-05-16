@@ -3,6 +3,7 @@
 #include "Tache.hpp"
 #include <map>
 #include "Category.hpp"
+#include "actionCat.hpp"
 
 using namespace std;
 
@@ -32,6 +33,9 @@ int main()
             break;
         case 2:
             cout << biblio1.getTache() << endl;
+            break;
+        case 3:
+            delInCat(&biblio1);
             break;
         case 9:
             cont = false;

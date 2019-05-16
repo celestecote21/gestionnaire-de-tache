@@ -1,0 +1,1 @@
+void delInCat(Category *ptCat);

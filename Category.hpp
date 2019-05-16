@@ -12,7 +12,9 @@ public:
     ~Category();
     void addTache(std::string name, std::string content);
     void addTache();
+    void delTask(int id);
     int getNextId();
     std::string getTache();
+
 
 };

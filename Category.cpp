@@ -81,8 +81,26 @@ string Category::getTache()
     for (int i = 1; i <= m_nbTache; i++)
     {
         str += m_listTache[i]->tacheToString(i);
-        str += "\n"
+        str += "\n";
     }
     
     return str;
 }
+
+void Category::delTask(int id)
+{
+    if (id > m_nbTache){
+        cout << "the asked task does't already exist" << endl;
+        TODO: "faire en sorte que l'on puisse ajouter une tache a partire d'ici pk pas";
+        return;
+    }else{
+        m_listTache[id] = NULL;
+        for (int i = id; i < m_nbTache; i++)
+        {
+            m_listTache[i] = m_listTache[i + 1];
+        }
+        m_listTache[m_nbTache] = NULL;
+        m_nbTache --;       
+    }
+}
+
