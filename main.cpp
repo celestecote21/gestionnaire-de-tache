@@ -22,11 +22,12 @@ int main()
 
         
         cin >> choix;
+        cin.ignore();
 
         switch (choix)
         {
         case 1:
-        TODO: "faire la partie pour ajouter une tache";
+        
             biblio1.addTache();
             break;
         case 2:
@@ -35,7 +36,6 @@ int main()
         case 9:
             cont = false;
         default:
-            cont = false;
             break;
         }
 

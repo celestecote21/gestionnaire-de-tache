@@ -32,26 +32,26 @@ void Category::addTache()
     string name;
     string content;
     cout << "please type the name of this task" << endl;
-    cin >> name;
+    getline(cin, name);
     cout << "okai so waht's the content of the " << name << " task" << endl;
-    cin >> content;
+    getline(cin, content);
     cout << "do you what add a time? (y/n)" << endl;
-    char answer;
+    string answer;
     
     bool okai(false);
     do
     {
-        cin >> answer;
+        getline(cin, answer);
         okai = false;
-        if (answer == 'y' || answer == 'Y')  
+        if (answer == "y" || answer == "Y")  
         {
             cout << "please enter the date in this format \"dd/mm hh/min\"" << endl; 
             string date;
-            cin >> date;
+            getline(cin, date);
             m_listTache[getNextId()] = new Tache(name, content, date);
             m_nbTache ++;
             
-        }else if (answer == 'n' || answer == 'N')
+        }else if (answer == "n" || answer == "N")
         {
             m_listTache[getNextId()] = new Tache(name, content);
             m_nbTache ++;
@@ -81,6 +81,7 @@ string Category::getTache()
     for (int i = 1; i <= m_nbTache; i++)
     {
         str += m_listTache[i]->tacheToString(i);
+        str += "\n"
     }
     
     return str;

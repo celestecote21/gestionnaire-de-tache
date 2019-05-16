@@ -31,7 +31,7 @@ string Tache::tacheToString(int id)
     ostringstream ost;
     
     ost << "\"id\": " << id;    
-    ost << "\"name\": " << m_name;
+    ost << " \"name\": " << m_name;
     ost << " \"content\": " << m_content;
     ost << " \"date\": " << m_date;
      
