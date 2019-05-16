@@ -11,6 +11,7 @@ public:
     Category(/* args */);
     ~Category();
     void addTache(std::string name, std::string content);
+    void addTache();
     int getNextId();
     std::string getTache();
 

@@ -13,6 +13,14 @@ Tache::Tache(string name, string content)
     cout << "tache cree " << m_name << " " << m_content << endl;
 }
 
+Tache::Tache(string name, string content, string date)
+{
+    m_name = name;
+    m_content = content;
+    m_date = date;
+    cout << "tache cree " << m_name << " " << m_content << endl;
+}
+
 Tache::~Tache()
 {
 }
@@ -25,6 +33,7 @@ string Tache::tacheToString(int id)
     ost << "\"id\": " << id;    
     ost << "\"name\": " << m_name;
     ost << " \"content\": " << m_content;
-    ost << ost.str();
-    return str;
+    ost << " \"date\": " << m_date;
+     
+    return ost.str();
 }

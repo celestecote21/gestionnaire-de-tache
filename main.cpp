@@ -10,6 +10,8 @@ int main()
 {
     Category biblio1 = Category();
     bool cont(true);
+    int choix;
+
     do
     {   
         cout << "bienvenue dans le meilleur des gestionnaires des taches,\n voici les options qui sont possible" << endl;
@@ -18,14 +20,14 @@ int main()
         cout << "\t 3. supprimer une tache" << endl;
         cout << "\t 9. exit" << endl;
 
-        int choix;
+        
         cin >> choix;
 
         switch (choix)
         {
         case 1:
         TODO: "faire la partie pour ajouter une tache";
-            biblio1.addTache("coucou", "dire bonjour");
+            biblio1.addTache();
             break;
         case 2:
             cout << biblio1.getTache() << endl;
@@ -33,6 +35,7 @@ int main()
         case 9:
             cont = false;
         default:
+            cont = false;
             break;
         }
 

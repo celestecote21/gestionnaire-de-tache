@@ -27,6 +27,46 @@ void Category::addTache(string name, string content)
 
 }
 
+void Category::addTache()
+{
+    string name;
+    string content;
+    cout << "please type the name of this task" << endl;
+    cin >> name;
+    cout << "okai so waht's the content of the " << name << " task" << endl;
+    cin >> content;
+    cout << "do you what add a time? (y/n)" << endl;
+    char answer;
+    
+    bool okai(false);
+    do
+    {
+        cin >> answer;
+        okai = false;
+        if (answer == 'y' || answer == 'Y')  
+        {
+            cout << "please enter the date in this format \"dd/mm hh/min\"" << endl; 
+            string date;
+            cin >> date;
+            m_listTache[getNextId()] = new Tache(name, content, date);
+            m_nbTache ++;
+            
+        }else if (answer == 'n' || answer == 'N')
+        {
+            m_listTache[getNextId()] = new Tache(name, content);
+            m_nbTache ++;
+        }else{
+            cout << "please type y or n" << endl;
+            okai = true;
+        }     
+    } while (okai);
+    
+
+
+    
+
+}
+
 int Category::getNextId()
 {
     m_nextId ++;
@@ -35,7 +75,7 @@ int Category::getNextId()
 
 string Category::getTache()
 {
-    TODO: "mettre une securiter pour pas que l'on essaye d'acceder a une tache pas inscrite";
+    
     string str = "";
 
     for (int i = 1; i <= m_nbTache; i++)
