@@ -29,10 +29,11 @@ void strToCat()
     string line;
     int debut, fin;
     istream_iterator<char> itFichier(fichier);
-
     getline(fichier, line);
+    while(line != ""){
+    
     cout << line << endl;
-    debut = line.find("\"");
+    debut = line.find("\"", 2);
     fin = line.find("\"", debut+1);    
 
     int id = line[debut + 3] - 48;
@@ -57,8 +58,6 @@ void strToCat()
         content += line[i];
     }
     cout << content << endl;
-
-
     debut = fin;
     debut = line.find(":", debut);
     fin = line.find("\"", debut+1);
@@ -68,9 +67,8 @@ void strToCat()
         date += line[i];
     }
     cout << date << endl;
-
     cout << endl;
-
-    
+    getline(fichier, line);
+    }  
     
 }
