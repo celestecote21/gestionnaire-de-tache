@@ -137,10 +137,26 @@ void Category::load()
 {
     ifstream fichier("task");
     string line;
+    string temp;
     int debut, fin;
     getline(fichier, line);
+    bool nope(false);
     while(line != ""){
     
+    for (int i = 1; i <= m_nbTache; i++)
+    {
+        temp = m_listTache[i]->tacheToString(i);
+        if(temp.compare(1, 10,line,1,10) == 0){
+            cout << "et ben non";
+            nope = true;
+        }
+        
+    }
+    if (nope){
+        getline(fichier, line);
+        continue;
+    }
+        
         // cout << line << endl;
         debut = line.find("\"", 2);
         fin = line.find("\"", debut+1);    
