@@ -3,6 +3,7 @@
 #include <string>
 #include "Tache.hpp"
 #include "Category.hpp"
+#include "actionCat.hpp"
 #include <map>
 
 using namespace std;
@@ -143,19 +144,6 @@ void Category::load()
     bool nope(false);
     while(line != ""){
     
-    for (int i = 1; i <= m_nbTache; i++)
-    {
-        temp = m_listTache[i]->tacheToString(i);
-        if(temp.compare(1, 10,line,1,10) == 0){
-            cout << "et ben non";
-            nope = true;
-        }
-        
-    }
-    if (nope){
-        getline(fichier, line);
-        continue;
-    }
         
         // cout << line << endl;
         debut = line.find("\"", 2);
@@ -168,10 +156,28 @@ void Category::load()
         debut = line.find(":", debut);
         fin = line.find("\"", debut+1);
         string name;
-        for(int i = debut + 2; i <= fin - 1; i++)
+        for(int i = debut + 2; i <= fin - 2; i++)
         {
             name += line[i];
         }
+        
+        for (int i = 1; i <= m_nbTache; i++)
+        {
+            temp = m_listTache[i]->tacheToString(i);
+            
+            if(name == getName(temp)){
+                //cout << "et ben non";
+                nope = true;
+            }        
+        }
+        cout << endl << endl;
+        if (nope){
+            getline(fichier, line);
+            nope = false;
+            continue;
+        }
+        else
+            cout << "ca fait rien" << endl;
 
 
         debut = fin;

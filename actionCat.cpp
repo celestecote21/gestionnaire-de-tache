@@ -21,4 +21,26 @@ void delInCat(Category *ptCat)
     ptCat->delTask(id);
 }
 
+string getName(string strTache)
+{
+    string name;
+    int debut, fin;
+
+    debut = strTache.find("\"", 2);
+    fin = strTache.find("\"", debut+1);    
+
+    int id = strTache[debut + 3] - 48;
+
+
+    debut = fin;
+    debut = strTache.find(":", debut);
+    fin = strTache.find("\"", debut+1);
+    for(int i = debut + 2; i <= fin - 2; i++)
+        {
+            name += strTache[i];
+        }
+    cout << name << endl;
+    return name;
+}
+
 

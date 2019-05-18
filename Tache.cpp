@@ -39,7 +39,7 @@ string Tache::tacheToString(int id)
     string str = "";
     ostringstream ost;
     
-    ost << "\"id\": " << id;    
+    ost << "\"id\": " <<  char(id + 48);    
     ost << " \"name\": " << m_name;
     ost << " \"content\": " << m_content;
     if (m_date != "")
