@@ -28,6 +28,13 @@ void Category::addTache(string name, string content)
 
 }
 
+void Category::addTache(int id, string name, string content, string date)
+{
+    id = getNextId();
+    m_listTache[id] = new Tache(id, name, content, date);
+    m_nbTache ++;
+}
+
 void Category::addTache()
 {
     string name;
@@ -67,6 +74,8 @@ void Category::addTache()
     
 
 }
+
+
 
 int Category::getNextId()
 {
@@ -118,6 +127,55 @@ int Category::save()
         cout << "sauvegarde impossible" << endl;
         return -1;
     }
+    
+}
+
+void Category::load()
+{
+    ifstream fichier("task");
+    string line;
+    int debut, fin;
+    getline(fichier, line);
+    while(line != ""){
+    
+        // cout << line << endl;
+        debut = line.find("\"", 2);
+        fin = line.find("\"", debut+1);    
+
+        int id = line[debut + 3] - 48;
+
+
+        debut = fin;
+        debut = line.find(":", debut);
+        fin = line.find("\"", debut+1);
+        string name;
+        for(int i = debut + 2; i <= fin - 1; i++)
+        {
+            name += line[i];
+        }
+
+
+        debut = fin;
+        debut = line.find(":", debut);
+        fin = line.find("\"", debut+1);
+        string content;
+        for(int i = debut + 2; i <= fin - 1; i++)
+        {
+            content += line[i];
+        }
+
+        debut = fin;
+        debut = line.find(":", debut);
+        fin = line.find("\"", debut+1);
+        string date;
+        for(int i = debut + 2; i <= fin - 1; i++)
+        {
+            date += line[i];
+        }
+        addTache(id, name, content, date);
+        getline(fichier, line);
+    }  
+
     
 }
 

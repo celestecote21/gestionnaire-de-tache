@@ -11,11 +11,13 @@ public:
     Category(/* args */);
     ~Category();
     void addTache(std::string name, std::string content);
+    void addTache(int id, std::string name, std::string content, std::string date);
     void addTache();
     void delTask(int id);
     int getNextId();
     int save();
     std::string getTache();
+    void load();
 
 
 };

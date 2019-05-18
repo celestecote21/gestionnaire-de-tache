@@ -21,6 +21,15 @@ Tache::Tache(string name, string content, string date)
     cout << "tache cree " << m_name << " " << m_content << endl;
 }
 
+Tache::Tache(int id, string name, string content, string date)
+{
+    m_id = id;
+    m_name = name;
+    m_content = content;
+    m_date = date;
+    
+}
+
 Tache::~Tache()
 {
 }

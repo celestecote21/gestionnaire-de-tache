@@ -14,7 +14,8 @@ int main()
     int choix;
 
     do
-    {   
+    {  
+        
         cout << "bienvenue dans le meilleur des gestionnaires des taches,\n voici les options qui sont possible" << endl;
         cout << "\t 1. ajouter une tache" << endl;
         cout << "\t 2. Voir les taches a faire" << endl;
@@ -45,7 +46,7 @@ int main()
             biblio1.save();
             break;
         case 5:
-            strToCat();
+            biblio1.load();
             break;
         case 9:
             cont = false;
