@@ -34,7 +34,7 @@ string Tache::tacheToString(int id)
     ost << " \"name\": " << m_name;
     ost << " \"content\": " << m_content;
     if (m_date != "")
-        ost << " \"date\": " << m_date;
+        ost << " \"date\": " << m_date << "\"";
      
     return ost.str();
 }

@@ -26,60 +26,51 @@ void strToCat()
 {
     ifstream fichier("task");
     string temp;
+    string line;
+    int debut, fin;
     istream_iterator<char> itFichier(fichier);
-    
-    char ch;
 
-    while (ch != '\"'){
-        ch = *itFichier;
-        temp += ch;
-        ++ itFichier;
-    }
-    /// id //
-    int id;
-    for (int i = 0; i < 4; i++)
-    {
-        ++ itFichier;
-    }
-    int i  = *itFichier - 48;
-    ++ itFichier;
-    int a = *itFichier - 48;
-    if(a >= 0 && a <= 9)
-    {
-        id = i * 10 + a;
-    }
-    else
-    {
-        id = i;
-    }
-    /// go to the name
-    
-     while (ch != ':'){
-        ch = *itFichier;
-        temp += ch;
-        ++ itFichier;
-    }
-    string name("");
-    while (*itFichier != '\"')
-    {
-        name += *itFichier;
-        ++ itFichier;
-    }
+    getline(fichier, line);
+    cout << line << endl;
+    debut = line.find("\"");
+    fin = line.find("\"", debut+1);    
 
-    // collect the contente:
+    int id = line[debut + 3] - 48;
+    cout << id <<endl;
 
-    while (*itFichier != ':'){
-        ++ itFichier;
+    debut = fin;
+    debut = line.find(":", debut);
+    fin = line.find("\"", debut+1);
+    string name;
+    for(int i = debut + 2; i <= fin - 1; i++)
+    {
+        name += line[i];
     }
-    ++ itFichier;
-    cout << *itFichier;
+    cout << name << endl;
 
+    debut = fin;
+    debut = line.find(":", debut);
+    fin = line.find("\"", debut+1);
     string content;
-    while (*itFichier != '\"')
+    for(int i = debut + 2; i <= fin - 1; i++)
     {
-        content += *itFichier;
-        ++ itFichier;
+        content += line[i];
     }
-    cout << id << " " << name << " " << content << endl;
+    cout << content << endl;
+
+
+    debut = fin;
+    debut = line.find(":", debut);
+    fin = line.find("\"", debut+1);
+    string date;
+    for(int i = debut + 2; i <= fin - 1; i++)
+    {
+        date += line[i];
+    }
+    cout << date << endl;
+
+    cout << endl;
+
+    
     
 }
