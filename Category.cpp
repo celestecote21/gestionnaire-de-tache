@@ -140,8 +140,11 @@ void Category::load()
     string line;
     string temp;
     int debut, fin;
+
     getline(fichier, line);
+
     bool nope(false);
+
     while(line != ""){
     
         
@@ -163,23 +166,17 @@ void Category::load()
         
         for (int i = 1; i <= m_nbTache; i++)
         {
-            temp = m_listTache[i]->tacheToString(i);
-            
-            if(name == getName(temp)){
-                //cout << "et ben non";
-                nope = true;
-            }        
+            temp = m_listTache[i]->tacheToString(i);            
+            if(name == getName(temp))
+                nope = true;    
         }
-        cout << endl << endl;
+        
         if (nope){
             getline(fichier, line);
             nope = false;
             continue;
         }
-        else
-            cout << "ca fait rien" << endl;
-
-
+        
         debut = fin;
         debut = line.find(":", debut);
         fin = line.find("\"", debut+1);
