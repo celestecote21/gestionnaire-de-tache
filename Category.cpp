@@ -110,7 +110,8 @@ void Category::delTask(int id)
             m_listTache[i] = m_listTache[i + 1];
         }
         m_listTache[m_nbTache] = NULL;
-        m_nbTache --;       
+        m_nbTache --;
+        m_nextId --;       
     }
 }
 
@@ -118,7 +119,9 @@ int Category::save()
 {
     ofstream fichier("./task");
     if(fichier){
+        fichier.clear();
         fichier << getTache();
+        fichier << "\n";
         TODO: "manque beacoup de truc il faut verifier que l'on sauvegarde pas deux fois ma meme chose et pas les meme id";
 
 

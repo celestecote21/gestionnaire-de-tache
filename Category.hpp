@@ -19,5 +19,7 @@ public:
     std::string getTache();
     void load();
 
+    TODO: "fonction == pour tester si on peut charcher pour ne pas avoir la meme";
+
 
 };
