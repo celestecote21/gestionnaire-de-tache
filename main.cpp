@@ -44,6 +44,9 @@ int main()
         case 4:
             biblio1.save();
             break;
+        case 5:
+            strToCat();
+            break;
         case 9:
             cont = false;
         default:
