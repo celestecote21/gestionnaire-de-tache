@@ -2,6 +2,7 @@
 #include <string>
 #include <sstream>
 #include "Tache.hpp"
+#include "actionCat.hpp"
 
 using namespace std;
 
@@ -18,6 +19,7 @@ Tache::Tache(string name, string content, string date)
     m_name = name;
     m_content = content;
     m_date = date;
+    m_date_t = toDate(m_date);
     cout << "tache cree " << m_name << " " << m_content << endl;
 }
 
@@ -27,6 +29,7 @@ Tache::Tache(int id, string name, string content, string date)
     m_name = name;
     m_content = content;
     m_date = date;
+    m_date_t = toDate(m_date);
     
 }
 

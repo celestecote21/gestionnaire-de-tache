@@ -1,3 +1,10 @@
+struct Date
+{
+    int hours;
+    int minutes;
+    int day;
+    int month;
+};
 
 class Tache
 {
@@ -5,6 +12,7 @@ private:
     std::string m_name;
     std::string m_content;
     std::string m_date;
+    Date m_date_t;
     int m_id;
     int time;
 public:
