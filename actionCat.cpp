@@ -1,11 +1,4 @@
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <iterator>
-#include <sstream>
-#include "Tache.hpp"
-#include <map>
-#include "Category.hpp"
+
 #include "actionCat.hpp"
 
 using namespace std;
@@ -73,7 +66,7 @@ Date toDate(string strDate)
                 break;
         }
     }   
-     cout << date.day << " " << date.month << endl;
+    //cout << date.day << " " << date.month << endl;
     return date;
 }
 

@@ -1,6 +1,4 @@
-#include <iostream>
-#include <string>
-#include <sstream>
+
 #include "Tache.hpp"
 #include "actionCat.hpp"
 

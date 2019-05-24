@@ -1,3 +1,9 @@
+#ifndef TACHE_HEADER
+#define TACHE_HEADER
+#include <iostream>
+#include <string>
+#include <sstream>
+
 struct Date
 {
     int hours;
@@ -22,3 +28,4 @@ public:
     ~Tache();
     std::string tacheToString(int id);
 };
+#endif

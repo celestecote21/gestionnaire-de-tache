@@ -1,3 +1,5 @@
+#ifndef CATEGORY_HEADER
+#define CATEGORY_HEADER
 #include <map>
 
 class Category
@@ -23,3 +25,5 @@ public:
 
 
 };
+
+#endif
