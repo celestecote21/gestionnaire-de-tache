@@ -18,6 +18,7 @@ Tache::Tache(string name, string content, string date)
     m_content = content;
     m_date = date;
     m_date_t = toDate(m_date);
+    m_ifDate = true;
     cout << "tache cree " << m_name << " " << m_content << endl;
 }
 
@@ -28,6 +29,7 @@ Tache::Tache(int id, string name, string content, string date)
     m_content = content;
     m_date = date;
     m_date_t = toDate(m_date);
+    m_ifDate = true;
     
 }
 
@@ -47,4 +49,17 @@ string Tache::tacheToString(int id)
         ost << " \"date\": " << m_date << "\"";
      
     return ost.str();
+}
+
+
+ int Tache::execTask()
+{
+    /*
+    if the task has a date create a file with the base. 
+    write at the end of the file the instruction
+    and finelly copie this to the pathe for at 
+
+    do this here or on actionCat file? 
+    */ 
+    
 }
