@@ -52,36 +52,44 @@ string Tache::tacheToString(int id)
 }
 
 
- int Tache::execTask()
+// int Tache::execTask()
+// {
+//     /*
+//     if the task has a date create a file with the base. 
+//     write at the end of the file the instruction
+//     and finelly copie this to the pathe for at 
+
+//     do this here or on actionCat file? 
+//     */ 
+
+//    /*
+//    firtsly i gonna use system commande to do this
+//    but i thing there is better way to do this
+//    */
+//   string taskFile("test.task");
+
+//   string cpCommande("cp ");
+//   cpCommande += PATH_BASE;
+//   cpCommande += taskFile;  // here we must put an unique name at the task
+
+//   system(cpCommande.c_str());
+
+//   string echoCommande("echo ");
+
+//   echoCommande += "touch ~/yoloooo.txt";  // la c'est la grosse partie
+//   echoCommande += " >> ";
+//   echoCommande += taskFile;
+
+//   system(echoCommande.c_str());
+
+//   /* reste a savoir ou c'est pour mettre la date*/
+    
+// }
+
+int Tache::execTask()
 {
     /*
-    if the task has a date create a file with the base. 
-    write at the end of the file the instruction
-    and finelly copie this to the pathe for at 
-
-    do this here or on actionCat file? 
-    */ 
-
-   /*
-   firtsly i gonna use system commande to do this
-   but i thing there is better way to do this
-   */
-  string taskFile("test.task");
-
-  string cpCommande("cp ");
-  cpCommande += PATH_BASE;
-  cpCommande += taskFile;  // here we must put an unique name at the task
-
-  system(cpCommande.c_str());
-
-  string echoCommande("echo ");
-
-  echoCommande += "touch ~/yoloooo.txt";  // la c'est la grosse partie
-  echoCommande += " >> ";
-  echoCommande += taskFile;
-
-  system(echoCommande.c_str());
-
-  /* reste a savoir ou c'est pour mettre la date*/
-    
+    pour l'affichage de la tache par rapport au temps
+    utiliser un timer avec la librairie time
+    */
 }
