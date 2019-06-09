@@ -104,6 +104,8 @@ void Category::delTask(int id)
         cout << "the asked task does't already exist" << endl;
         TODO: "faire en sorte que l'on puisse ajouter une tache a partire d'ici pk pas";
         return;
+    }else if(id == -3){
+        delAll();
     }else{
         m_listTache[id] = NULL;
         for (int i = id; i < m_nbTache; i++)
@@ -199,5 +201,14 @@ void Category::load()
     }  
 
     
+}
+
+void Category::delAll()
+{
+    int nbTask = m_nbTache;
+    for(int i = 0; i < nbTask; i++)
+    {
+        delTask(1);
+    }
 }
 

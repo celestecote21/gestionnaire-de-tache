@@ -14,6 +14,10 @@ void delInCat(Category *ptCat)
     id = strToInt(str);
     switch (id)
     {
+    case -3:
+        cout << "all the task will be delete" << endl;
+        ptCat->delTask(id);
+        break;
     case -2:
         cout << "please enter a number" << endl;
         break;
@@ -111,8 +115,9 @@ int strToInt(string str)
             id = int(str[0]) - 48;
         }
         return id;
-    }else
-    {
+    }else if(str == "all"){
+        return -3;
+    }else{
         return -2;
     }
     

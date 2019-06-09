@@ -16,6 +16,7 @@ public:
     void addTache(int id, std::string name, std::string content, std::string date);
     void addTache();
     void delTask(int id);
+    void delAll();
     int getNextId();
     int save();
     std::string getTache();
