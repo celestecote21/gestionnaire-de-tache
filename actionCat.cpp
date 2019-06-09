@@ -5,13 +5,27 @@ using namespace std;
 
 void delInCat(Category *ptCat)
 {
+    string str;
     int id;
     cout << ptCat->getTache() << endl;
     cout << "please enter the task's id you want to delete" << endl;
-    cin >> id;
-    cin.ignore();
-    cout << "the task with " << id << " id will be delete" << endl;
-    ptCat->delTask(id);
+    getline(cin, str);
+    //cin.ignore();
+    id = strToInt(str);
+    switch (id)
+    {
+    case -2:
+        cout << "please enter a number" << endl;
+        break;
+    case -1:
+        cout << "there is an errors please enter a good number" << endl;
+        break;
+    default:
+        cout << "the task with " << id << " id will be delete" << endl;
+        ptCat->delTask(id);
+        break;
+    }
+    
 }
 
 string getName(string strTache)
@@ -78,4 +92,30 @@ int toNbr(int dizaine, int unite)
     return nbr;
  }
 
+
+int strToInt(string str)
+{
+    int id;
+    int dizaine;
+    int uniter;
+
+    if (int(str[0]) >= 48 && int(str[0]) <= 57)
+    {
+        if( str.length() > 2){
+            return -1;
+        }else if (str.length() == 2){
+            dizaine = int(str[0]) - 48;
+            uniter = int(str[1]) - 48;
+            id = toNbr(dizaine, uniter);
+        }else if (str.length() == 1){
+            id = int(str[0]) - 48;
+        }
+        return id;
+    }else
+    {
+        return -2;
+    }
+    
+    
+}
 
