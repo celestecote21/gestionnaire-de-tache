@@ -13,8 +13,10 @@ int main(int argc, char** argv)
     Category biblio1 = Category();
     bool cont(true);
     int choix;
+    string strChoix;
     biblio1.load();
-    readArg(argc, argv, &biblio1);
+    if (argc > 1)
+        readArg(argc, argv, &biblio1);
 
     do
     {  
@@ -30,8 +32,10 @@ int main(int argc, char** argv)
 
         TODO: "manque a finir la sauvegarder et a faire le chargement";
 
-        cin >> choix;
-        cin.ignore();
+        getline(cin, strChoix);
+
+        choix = strToInt(strChoix);
+        //cin.ignore();
 
         switch (choix)
         {

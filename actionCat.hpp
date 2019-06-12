@@ -6,6 +6,7 @@
 #include <map>
 #include "Category.hpp"
 void delInCat(Category *ptCat);
+bool checkTime(std::string strDate);
 void strToCat();
 std::string getName(std::string strTache);
 Date toDate(std::string strDate);

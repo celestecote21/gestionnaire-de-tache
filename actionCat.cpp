@@ -124,3 +124,18 @@ int strToInt(string str)
     
 }
 
+
+bool checkTime(string strDate)
+{
+    Date date(toDate(strDate));
+    if (date.day >= 1 && date.day <= 31){
+        if (date.month >= 1 && date.month <= 12){
+            if (date.hours >= 0 && date.hours <= 24){
+                if (date.minutes >= 0 && date.minutes <= 60){
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}

@@ -4,6 +4,7 @@
 #include "Tache.hpp"
 #include "Category.hpp"
 #include "actionCat.hpp"
+#include "cli.hpp"
 #include <map>
 
 using namespace std;
@@ -51,35 +52,16 @@ void Category::addTache()
     getline(cin, name);
     cout << "okai so waht's the content of the " << name << " task" << endl;
     getline(cin, content);
-    cout << "do you what add a time? (y/n)" << endl;
-    string answer;
-    
-    bool okai(false);
-    do
+
+    string date(askTime());
+    if (date != "nope")
     {
-        getline(cin, answer);
-        okai = false;
-        if (answer == "y" || answer == "Y")  
-        {
-            cout << "please enter the date in this format \"dd/mm hh/min\"" << endl; 
-            string date;
-            getline(cin, date);
-            m_listTache[getNextId()] = new Tache(name, content, date);
-            m_nbTache ++;
-            
-        }else if (answer == "n" || answer == "N")
-        {
-            m_listTache[getNextId()] = new Tache(name, content);
-            m_nbTache ++;
-        }else{
-            cout << "please type y or n" << endl;
-            okai = true;
-        }     
-    } while (okai);
-    
-
-
-    
+        m_listTache[getNextId()] = new Tache(name, content, date);
+    }
+    else{
+        m_listTache[getNextId()] = new Tache(name, content);
+    }
+     m_nbTache ++;
 
 }
 
