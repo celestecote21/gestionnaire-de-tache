@@ -114,9 +114,6 @@ int Category::save()
         fichier.clear();
         fichier << getTache();
         fichier << "\n";
-        TODO: "manque beacoup de truc il faut verifier que l'on sauvegarde pas deux fois ma meme chose et pas les meme id";
-
-
         return 1;
     }else{
         cout << "sauvegarde impossible" << endl;

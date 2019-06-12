@@ -51,6 +51,16 @@ void addTaskByArg(int argCount, char** argText, Category* ptCat)
         title = argText[2];
         content = argText[3];
         date = argText[4];
+        if (!checkTime(date))
+        {
+            cout << "the date is wrong" << endl;
+            date = askTime();
+            if (date == "nope"){
+                ptCat->addTache(title, content);
+                return;
+            }
+        }
+        
     }
 
     ptCat->addTache(title, content, date);
