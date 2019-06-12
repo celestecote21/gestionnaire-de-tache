@@ -2,16 +2,19 @@
 #include <string>
 #include "Tache.hpp"
 #include <map>
+#include "cli.hpp"
 #include "Category.hpp"
 #include "actionCat.hpp"
 
 using namespace std;
 
-int main()
+int main(int argc, char** argv)
 {
     Category biblio1 = Category();
     bool cont(true);
     int choix;
+    biblio1.load();
+    readArg(argc, argv, &biblio1);
 
     do
     {  

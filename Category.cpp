@@ -36,6 +36,13 @@ void Category::addTache(int id, string name, string content, string date)
     m_nbTache ++;
 }
 
+void Category::addTache(string name, string content, string date)
+{
+    
+    m_listTache[getNextId()] = new Tache( name, content, date);
+    m_nbTache ++;
+}
+
 void Category::addTache()
 {
     string name;
