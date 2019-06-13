@@ -9,6 +9,8 @@ Tache::Tache(string name, string content)
 {
     m_name = name;
     m_content = content;
+    m_ifDate = false;
+    m_done = false;
     cout << "tache cree " << m_name << " " << m_content << endl;
 }
 
@@ -19,6 +21,7 @@ Tache::Tache(string name, string content, string date)
     m_date = date;
     m_date_t = toDate(m_date);
     m_ifDate = true;
+    m_done = false;
     cout << "tache cree " << m_name << " " << m_content << endl;
 }
 
@@ -30,6 +33,7 @@ Tache::Tache(int id, string name, string content, string date)
     m_date = date;
     m_date_t = toDate(m_date);
     m_ifDate = true;
+    m_done = false;
     
 }
 
@@ -46,11 +50,20 @@ string Tache::tacheToString(int id)
     ost << " \"name\": " << m_name;
     ost << " \"content\": " << m_content;
     if (m_date != "")
-        ost << " \"date\": " << m_date << "\"";
-     
+        ost << " \"date\": " << m_date;
+    if (m_done){
+        ost << " done ";
+    }
+    ost << "\"";
+    
     return ost.str();
 }
 
+
+void Tache::isDone()
+{
+    m_done = true;
+}
 
 // int Tache::execTask()
 // {
@@ -92,4 +105,5 @@ int Tache::execTask()
     pour l'affichage de la tache par rapport au temps
     utiliser un timer avec la librairie time
     */
+   return 1;
 }

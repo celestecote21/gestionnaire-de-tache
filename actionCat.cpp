@@ -139,3 +139,32 @@ bool checkTime(string strDate)
     }
     return false;
 }
+
+
+void markDone(Category* ptCat)
+{
+    string str;
+    int id;
+    cout << ptCat->getTache() << endl;
+    cout << "please enter the task's id you want to mark as done" << endl;
+    getline(cin, str);
+    //cin.ignore();
+    id = strToInt(str);
+    switch (id)
+    {
+    case -3:
+        cout << "all the task will be done" << endl;
+        ptCat->delTask(id);
+        break;
+    case -2:
+        cout << "please enter a number" << endl;
+        break;
+    case -1:
+        cout << "there is an errors please enter a good number" << endl;
+        break;
+    default:
+        cout << "the task with " << id << " id will be delete" << endl;
+        ptCat->done(id);
+        break;
+    }
+}

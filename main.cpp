@@ -27,6 +27,7 @@ int main(int argc, char** argv)
         cout << "\t 3. supprimer une tache" << endl;
         cout << "\t 4. sauvegarder les taches" << endl;
         cout << "\t 5. charger les taches" << endl;
+        cout << "\t 6. finir une tache" << endl;
         
         cout << "\t 9. exit" << endl;
 
@@ -54,6 +55,9 @@ int main(int argc, char** argv)
             break;
         case 5:
             biblio1.load();
+            break;
+        case 6:
+            markDone(&biblio1);
             break;
         case 9:
             cont = false;

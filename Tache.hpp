@@ -21,8 +21,9 @@ class Tache
         std::string m_date;
         Date m_date_t;
         bool m_ifDate;
+        bool m_done;
         int m_id;
-        int time;
+        //int time;
     public:
         Tache(std::string name, std::string content);
         Tache(std::string name, std::string content, std::string date);
@@ -30,6 +31,7 @@ class Tache
         ~Tache();
         int execTask();
         std::string tacheToString(int id);
+        void isDone();
         
 };
 

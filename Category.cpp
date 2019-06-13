@@ -13,7 +13,6 @@ using namespace std;
 
 Category::Category(/* args */)
 {
-    TODO: "faire en sorte que ca genere la categorie a partire d'un fichier";
     m_nextId = 0;
     m_nbTache = 0;
    
@@ -141,7 +140,7 @@ void Category::load()
         fin = line.find("\"", debut+1);    
 
         int id = line[debut + 3] - 48;
-
+        TODO: "if faut que l'id puisse etre un nombre a deux chiffre";
 
         debut = fin;
         debut = line.find(":", debut);
@@ -169,7 +168,7 @@ void Category::load()
         debut = line.find(":", debut);
         fin = line.find("\"", debut+1);
         string content;
-        for(int i = debut + 2; i <= fin - 1; i++)
+        for(int i = debut + 2; i <= fin - 2; i++)
         {
             content += line[i];
         }
@@ -198,3 +197,7 @@ void Category::delAll()
     }
 }
 
+void Category::done(int id)
+{
+    m_listTache[id]->isDone();
+}

@@ -22,6 +22,7 @@ public:
     int save();
     std::string getTache();
     void load();
+    void done(int id);
 
     //TODO: "fonction == pour tester si on peut charcher pour ne pas avoir la meme";
 

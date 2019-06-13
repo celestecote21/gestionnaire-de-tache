@@ -13,4 +13,5 @@ Date toDate(std::string strDate);
 enum Statue {DAY, MONTH, HOUR, MINUTE, END};
 int toNbr(int dizaine, int unite);
 int strToInt(std::string str);
+void markDone(Category* ptCat);
 #endif
