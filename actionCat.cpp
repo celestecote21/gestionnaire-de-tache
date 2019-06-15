@@ -27,6 +27,8 @@ void delInCat(Category *ptCat)
     default:
         cout << "the task with " << id << " id will be delete" << endl;
         ptCat->delTask(id);
+        system("clear");
+        cout << ptCat->getTache() << endl;
         break;
     }
     
@@ -154,7 +156,8 @@ void markDone(Category* ptCat)
     {
     case -3:
         cout << "all the task will be done" << endl;
-        ptCat->delTask(id);
+        //ptCat->delTask(id);
+        TODO: "a faire";
         break;
     case -2:
         cout << "please enter a number" << endl;
@@ -163,8 +166,10 @@ void markDone(Category* ptCat)
         cout << "there is an errors please enter a good number" << endl;
         break;
     default:
-        cout << "the task with " << id << " id will be delete" << endl;
+        cout << "the task with " << id << " id will be mark as done" << endl;
         ptCat->done(id);
+        system("clear");
+        cout << ptCat->getTache() << endl;
         break;
     }
 }

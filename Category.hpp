@@ -14,6 +14,7 @@ public:
     ~Category();
     void addTache(std::string name, std::string content);
     void addTache(int id, std::string name, std::string content, std::string date);
+    void addTache(int id, std::string name, std::string content, std::string date, bool isDone);
     void addTache(std::string name, std::string content, std::string date);
     void addTache();
     void delTask(int id);

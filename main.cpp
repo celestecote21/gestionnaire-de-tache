@@ -37,7 +37,7 @@ int main(int argc, char** argv)
 
         choix = strToInt(strChoix);
         //cin.ignore();
-
+        system("clear");
         switch (choix)
         {
         case 1:

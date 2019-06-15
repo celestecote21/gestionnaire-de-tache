@@ -32,7 +32,16 @@ void Category::addTache(string name, string content)
 void Category::addTache(int id, string name, string content, string date)
 {
     id = getNextId();
-    m_listTache[id] = new Tache(id, name, content, date);
+    m_listTache[id] = new Tache(id, name, content, date, false);
+    m_nbTache ++;
+}
+
+void Category::addTache(int id, string name, string content, string date, bool isDone)
+{
+    id = getNextId();
+   
+    m_listTache[id] = new Tache(id, name, content, date, isDone);
+    
     m_nbTache ++;
 }
 
@@ -141,6 +150,8 @@ void Category::load()
 
         int id = line[debut + 3] - 48;
         TODO: "if faut que l'id puisse etre un nombre a deux chiffre";
+//-------------------------------------TO FIND NAME-------------------------------------//
+// "name": aller se coucher "
 
         debut = fin;
         debut = line.find(":", debut);
@@ -150,7 +161,7 @@ void Category::load()
         {
             name += line[i];
         }
-        
+        // for test if there is note the same task
         for (int i = 1; i <= m_nbTache; i++)
         {
             temp = m_listTache[i]->tacheToString(i);            
@@ -163,7 +174,9 @@ void Category::load()
             nope = false;
             continue;
         }
-        
+//-------------------------------------TO FIND CONTENT-------------------------------------//  
+//"content": il faut jamais se coucher trop tard "
+
         debut = fin;
         debut = line.find(":", debut);
         fin = line.find("\"", debut+1);
@@ -173,17 +186,33 @@ void Category::load()
             content += line[i];
         }
 
+//"date": er/ER FD/DF" 
+//-------------------------------------TO FIND DATE-------------------------------------// 
         debut = fin;
-        debut = line.find(":", debut);
-        fin = line.find("\"", debut+1);
+       
+        int debutDate = line.find(":", debut);
+        int finDate = line.find("\"", debutDate+1);
         string date;
-        for(int i = debut + 2; i <= fin - 1; i++)
-        {
-            date += line[i];
+        if (debutDate != -1){            
+            for(int i = debutDate + 2; i <= finDate - 1; i++)
+            {
+                date += line[i];
+            }
+            //cout << endl;
+            debut = debutDate;
+            fin = finDate;
         }
-        addTache(id, name, content, date);
-        getline(fichier, line);
-    }  
+
+//----------------------TO FIND DONE-------------------//
+    //cout << line.size() << "\t" << fin << endl;
+    bool isDone = false;
+    if((line.size() - fin) > 4 ){
+        isDone = true;
+    }
+    addTache(id, name, content, date, isDone);
+    getline(fichier, line);
+    
+    } 
 
     
 }
