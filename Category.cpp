@@ -86,6 +86,9 @@ string Category::getTache()
     
     string str = "";
 
+    if(m_nbTache < 1)
+        cout << "there is any task";
+
     for (int i = 1; i <= m_nbTache; i++)
     {
         str += m_listTache[i]->tacheToString(i);
